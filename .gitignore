@@ -1,2 +1,5 @@
 data/.DS_Store
-*.csv
+# only ignore tripdata files but keep weather around
+# as that has no clean download link but requires a kaggle account
+*tripdata.csv
+data/final/weather_trips_combined.parquet

@@ -1,8 +1,8 @@
 # Tools
 
-## git-lfs
 
-Install [git-lfs](https://git-lfs.com/) for storage of data files.
+
+
 
 ## parquet
 
