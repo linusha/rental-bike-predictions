@@ -35,3 +35,11 @@ When you want to add a dependency to the project:
 1. Install the dependency by using `pip install`.
 2. Run `pip freeze > requirements.txt`, from the root of the repository.
 3. Make sure to commit the updated `requirements.txt` file along with the changes that required the new dependency.
+
+
+## Data Sources
+
+This project relies on a combination of data sources:
+
+- [This](https://www.kaggle.com/datasets/archit9406/bike-sharing) bike-rental data set from kaggle, that provides us with daily weather data for 2011-2012
+- More granular data for bike-rides from [capital bikeshare](https://capitalbikeshare.com/system-data)
