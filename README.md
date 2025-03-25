@@ -1,14 +1,37 @@
 # Tools
 
+## Environment and Packages
 
+This project uses `conda` for managing virtual environments and `pip` to handle dependencies.
 
+### Setup
 
+```sh
+# Create a new conda env for the project, using python 3.11 and installing pip in it
+conda create -n bike-project python=3.11 pip
+conda activate bike-project
+pip install -r requirements.txt
+```
 
-## parquet
+To ensure that you have all data available locally, after your first pull, you'll need to run
 
-For reading / writing [parquet files](https://parquet.apache.org/), you need to install **pyarrow** and **fastparquet**:
+```sh
+python combine_trip_weather_data.py
+```
 
-choose one:
+at the root of this repository and with the environment you just created activated.
 
-- `conda install pyarrow fastparquet`
-- `pip install pyarrow fastparquet`
+### Installing Dependencies
+
+From the root of the repository run:
+```sh
+pip install -r requirements.txt
+```
+
+### Adding Dependencies
+
+When you want to add a dependency to the project:
+
+1. Install the dependency by using `pip install`.
+2. Run `pip freeze > requirements.txt`, from the root of the repository.
+3. Make sure to commit the updated `requirements.txt` file along with the changes that required the new dependency.
