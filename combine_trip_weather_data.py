@@ -115,6 +115,8 @@ df = pd.merge(
     validate="many_to_one"
 )
 
+df.drop(columns=['yr', 'day', 'hr', 'yr_bin', 'start_yr_bin', 'end_yr_bin'], inplace=True)
+
 print("Trip-Weather Merge Check:")
 print(f"Trips count: {len(trips)}")
 print(f"Merged dataset count: {len(df)}")
