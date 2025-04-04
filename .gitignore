@@ -3,6 +3,7 @@ data/.DS_Store
 # as that has no clean download link but requires a kaggle account
 *tripdata.csv
 data/final/weather_trips_combined.parquet
+data/final/weather_hourly_all_locations.parquet # too big
 data/checkpoints
 .DS_Store
 .vscode/*
