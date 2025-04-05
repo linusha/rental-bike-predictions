@@ -8,4 +8,4 @@ data/final/weather_trips_locations_combined.parquet
 data/checkpoints
 .DS_Store
 .vscode/*
-.cache.sqlite
+**/.cache.sqlite
