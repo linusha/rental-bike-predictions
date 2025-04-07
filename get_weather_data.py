@@ -81,14 +81,14 @@ batch_checkpoint_file = "data/checkpoints/weather/batch_checkpoint.parquet"
 if os.path.exists(batch_checkpoint_file):
     print(f"Loading existing batch checkpoint from {batch_checkpoint_file}")
     all_hourly_dfs = [pd.read_parquet(batch_checkpoint_file)]
-
-# Load any individually processed locations from checkpoints
-for loc_idx in processed_locations:
-    if loc_idx < len(locs):  # Make sure the location index is valid
-        checkpoint_file = f"{checkpoint_dir}/location_{loc_idx}.parquet"
-        print(f"Loading checkpoint for location {loc_idx}")
-        loc_df = pd.read_parquet(checkpoint_file)
-        all_hourly_dfs.append(loc_df)
+else:
+    # Only load individual location checkpoints if no batch checkpoint exists
+    for loc_idx in processed_locations:
+        if loc_idx < len(locs):  # Make sure the location index is valid
+            checkpoint_file = f"{checkpoint_dir}/location_{loc_idx}.parquet"
+            print(f"Loading checkpoint for location {loc_idx}")
+            loc_df = pd.read_parquet(checkpoint_file)
+            all_hourly_dfs.append(loc_df)
 
 # Loop through location batches
 for i in range(0, len(locs), BATCH_SIZE):
