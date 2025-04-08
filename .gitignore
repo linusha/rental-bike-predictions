@@ -7,5 +7,4 @@ data/checkpoints
 .DS_Store
 .vscode/*
 **/.cache.sqlite
-data/final/weather_hourly_all_locations_2023.parquet
 data/final/weather_hourly_all_locations_2011-2012.parquet
