@@ -39,6 +39,7 @@ matplotlib-inline==0.1.7
 mercantile==1.2.1
 nest-asyncio==1.6.0
 numpy==2.2.4
+nvidia-nccl-cu12==2.26.5
 ortools==9.12.4544
 packaging==24.2
 pandas==2.2.3
@@ -74,4 +75,5 @@ typing_extensions==4.12.2
 tzdata==2025.2
 urllib3==2.3.0
 wcwidth==0.2.13
+xgboost==3.0.0
 xyzservices==2025.4.0
