@@ -6,3 +6,4 @@ data/checkpoints
 .vscode/*
 **/.cache.sqlite
 *matchable*
+checkpoints/model_train_checkpointing.txt
