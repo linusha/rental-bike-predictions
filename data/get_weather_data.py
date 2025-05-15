@@ -14,7 +14,7 @@ cache_session = requests_cache.CachedSession(".cache", expire_after=-1)
 retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
 openmeteo = openmeteo_requests.Client(session=retry_session)
 
-locs = pd.read_csv("data/raw/Capital_Bikeshare_Locations.csv")
+locs = pd.read_csv("raw/Capital_Bikeshare_Locations.csv")
 locs["TZ"] = "auto"  # automatically infer timezone from location
 
 # define time range here
@@ -59,7 +59,7 @@ def new_ip(token, ha_url):
 
 
 # Create checkpoint directory if it doesn't exist
-checkpoint_dir = "data/checkpoints/weather"
+checkpoint_dir = "checkpoints/weather"
 os.makedirs(checkpoint_dir, exist_ok=True)
 
 # Check for existing checkpoints
@@ -77,7 +77,7 @@ BATCH_SIZE = 100
 all_hourly_dfs = []
 
 # Check if we have a batch checkpoint
-batch_checkpoint_file = "data/checkpoints/weather/batch_checkpoint.parquet"
+batch_checkpoint_file = "checkpoints/weather/batch_checkpoint.parquet"
 if os.path.exists(batch_checkpoint_file):
     print(f"Loading existing batch checkpoint from {batch_checkpoint_file}")
     all_hourly_dfs = [pd.read_parquet(batch_checkpoint_file)]
@@ -251,7 +251,7 @@ print(
 
 # Save to parquet
 final_hourly_df.to_parquet(
-    "data/final/weather_hourly_all_locations_2023.parquet",
+    "final/weather_hourly_all_locations_2023.parquet",
     index=False,
     compression="brotli",
 )
